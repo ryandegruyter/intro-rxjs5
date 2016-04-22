@@ -3,7 +3,8 @@ import 'angular-messages';
 import 'angular-material';
 require('angular-material/angular-material.css');
 import {AppComponent} from "./AppComponent";
-export const APP_MODULE_NAME = "walibifungames";
+
+export const APP_MODULE_NAME = "Hello world";
 
 const APP_MODULE_DEPENDENCIES:Array<string> = [
     'ngMaterial',
