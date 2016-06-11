@@ -6,5 +6,6 @@ export class AppComponent implements IComponentOptions {
 
     template:string = `
         <h1>Hello world</h1>
+        <my-autocomplete></my-autocomplete>
         `;
 }

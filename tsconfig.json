@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "target": "es5",
-    "outDir": "out",
-    "noImplicitAny": false,
-
-    "rootDir": ".",
-    "sourceMap": true
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noEmitHelpers": true
   },
   "exclude": [
     "node_modules",
