@@ -4,6 +4,7 @@ import 'angular-material';
 require('angular-material/angular-material.css');
 import {AppComponent} from "./AppComponent";
 import {MyAutoComplete} from "../autocomplete/MyAutoComplete";
+import {UserService} from '../service/UserService';
 
 export const APP_MODULE_NAME = "Hello world";
 
@@ -18,4 +19,5 @@ angular
         APP_MODULE_DEPENDENCIES
     )
     .component(AppComponent.NAME, new AppComponent())
-    .component(MyAutoComplete.SELECTOR, new MyAutoComplete());
+    .component(MyAutoComplete.SELECTOR, new MyAutoComplete())
+    .service(UserService.NAME, UserService);

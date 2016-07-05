@@ -1,0 +1,14 @@
+<div>
+    <md-input-container>
+        <label>Username</label>
+        <input type="text" ng-model="$ctrl.myInput">
+    </md-input-container>
+    <md-list flex>
+        <md-list-item ng-repeat="user in $ctrl.users" ng-click="null">
+            <img ng-src="{{user.avatar_url}}" class="md-avatar" alt="{{user.login}}"/>
+            <div class="md-list-item-text" layout="column">
+                {{user.login}}
+            </div>
+        </md-list-item>
+    </md-list>
+</div>
