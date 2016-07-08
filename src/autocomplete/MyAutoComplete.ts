@@ -33,11 +33,15 @@ export class MyAutoCompleteController {
             .filter(x => x !== undefined)
             /* only check when user has stopped pressing after 100 ms
              * normally you would use a shorten timespan to keep it snappy */
-            .debounceTime(1000)
+            .debounceTime(500)
             /*dont make a request if the text remains the same */
             .distinctUntilChanged()
             .filter(x => x !== "")
-            .flatMap((qry: string)=>fromPromise(this.UserService.queryUsers(qry)))
+            .map(x => x.toLowerCase())
+            .flatMap((qry: string) =>
+                fromPromise(this.UserService.queryUsers(qry))
+                //try 3 times
+                .retry(3))
             .map((response: any)=>response.data.items)
             .do(this.showResults)
             .subscribe();
