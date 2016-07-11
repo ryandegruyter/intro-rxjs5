@@ -1,11 +1,17 @@
 <div layout="row">
-    <md-input-container flex="50">
+    <md-input-container flex>
         <label>Username</label>
         <input type="text" ng-model="$ctrl.myInput">
     </md-input-container>
 </div>
-<div layout="row" class="autocomplete-container" layout-padding ng-show="$ctrl.users.length > 0">
-    <md-whiteframe flex="50" class="md-whiteframe-4dp">
+<div layout="row" class="autocomplete-container" layout-padding ng-show="$ctrl.users.length > 0 || $ctrl.searchInProgress || $ctrl.errorMessage !== ''">
+    <md-whiteframe flex class="md-whiteframe-4dp">
+        <div layout="row" class="error-message" ng-show="$ctrl.errorMessage !== ''">
+            {{$ctrl.errorMessage}}
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-progress-circular md-mode="indeterminate" ng-show="$ctrl.searchInProgress"></md-progress-circular>
+        </div>
         <md-list>
             <md-list-item ng-repeat="user in $ctrl.users" ng-click="null">
                 <img ng-src="{{user.avatar_url}}" class="md-avatar" alt="{{user.login}}"/>

@@ -1,9 +1,17 @@
-app{
-  h1{
-    color: orange;
-  }
+app {
+    h1 {
+        color: orange;
+    }
+    .autocomplete-container {
+        margin-top: -40px;
+    }
 
-  .autocomplete-container {
-      margin-top: -40px;
-  }
+    md-list {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .error-message {
+        color: #cc0000;
+    }
 }
